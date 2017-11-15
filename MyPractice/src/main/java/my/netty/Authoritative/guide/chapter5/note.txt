@@ -1,0 +1,6 @@
+分隔符和订场解码器的应用
+DelimiterBasedFrameDecoder用于对使用分隔符结尾的消息进行自动解码，
+FixedLengthFrameDecoder用于对固定长度的消息进行自动解码。
+应用DelimiterBasedFrameDecoder和FixedLengthFrameDecoder进行开发非常简单，在绝大多数
+情况下，只要将DelimiterBasedFrameDecoder或FixedLengthFrameDecoder添加到对应
+ChannelPipeline的起始位置即可。
