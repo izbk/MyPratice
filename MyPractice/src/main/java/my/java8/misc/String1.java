@@ -14,6 +14,7 @@ public class String1 {
         testChars();
         testPatternPredicate();
         testPatternSplit();
+        testToChars();
     }
 
     private static void testChars() {
@@ -45,5 +46,12 @@ public class String1 {
     private static void testJoin() {
         String string = String.join(":", "foobar", "foo", "bar");
         System.out.println(string);
+    }
+    
+    private static void testToChars() {
+        String password = "password123";
+        password.chars() //IntStream
+                .mapToObj(x -> (char) x)//Stream<Character>
+                .forEach(System.out::println);
     }
 }

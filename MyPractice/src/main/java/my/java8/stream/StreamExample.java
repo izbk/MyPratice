@@ -1,8 +1,12 @@
 package my.java8.stream;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 
 /**
  * @author
@@ -50,7 +54,18 @@ public class StreamExample {
 		Optional<String> reduced = stringCollection.stream().sorted().reduce((s1, s2) -> s1 + "#" + s2);
 		reduced.ifPresent(System.out::println);
 		// "aaa1#aaa2#bbb1#bbb2#bbb3#ccc#ddd1#ddd2"
+		
+		//convert a primitive Array to a List
+		int[] number = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        List<Integer> list = Arrays.stream(number).boxed().collect(Collectors.toList());
+        list.forEach(System.out::println);
 
+        //Check if Array contains a certain value?
+        String[] alphabet = new String[]{"A", "B", "C"};
+        boolean result = Arrays.stream(alphabet).anyMatch("A"::equals);
+        boolean result1 = IntStream.of(number).anyMatch(x -> x == 4);
+        long[] lNumber = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        boolean result2 = LongStream.of(lNumber).anyMatch(x -> x == 10);
 	}
 
 }
