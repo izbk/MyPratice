@@ -1,3 +1,0 @@
-Java序列化
-本章介绍了如何利用Netty提供的ObjectEncoder编码器和ObjectDecoder解码器实现对POJO对象的系列化。
-通过使用Netty的Java序列化解编码handler，用户通过短短的几行代码就能完成POJO的序列化和反序列化。
